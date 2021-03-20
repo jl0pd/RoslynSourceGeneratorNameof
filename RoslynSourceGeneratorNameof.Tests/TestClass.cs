@@ -32,7 +32,7 @@ public partial class MyClass
 
             driver = driver.RunGeneratorsAndUpdateCompilation(input, out var outputCompilation, out var diagnostics);
 
-            Debug.Assert(diagnostics.IsEmpty); // faile here: warning CS8785: Generator 'MyClass' failed to generate source. It will not contribute to the output and compilation errors may occur as a result. Exception was of type 'Exception' with message 'here's bug!'
+            Debug.Assert(diagnostics.IsEmpty); // fail here: warning CS8785: Generator 'MyClass' failed to generate source. It will not contribute to the output and compilation errors may occur as a result. Exception was of type 'Exception' with message 'here's bug!'
             Debug.Assert(outputCompilation.GetDiagnostics().IsEmpty);
             Debug.Assert(outputCompilation.SyntaxTrees.Count() == 2);
         }
